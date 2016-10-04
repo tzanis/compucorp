@@ -1,0 +1,46 @@
+<div ng-controller="DemoCtrl">
+
+<h3>Filters:</h3>
+
+<div>
+	<label>Membership start date:</label><br>
+	<input type="text" ng-model="filters.startDateFrom" placeholder="From (ie: 2016-09-01)" />
+	<input type="text" ng-model="filters.startDateTo" placeholder="To (ie: 2016-09-30)" />
+	<button ng-click="getMemberships()">Show memberships</button>
+</div>
+
+<br>
+<hr>
+<br>
+
+<h3>Memberships: <i ng-show="!loading && memberships.length" style="float: right;">Found {{ memberships.length }} result(s).</i></h3>
+
+<div ng-show="loading">Loading data...</div>
+
+<div ng-show="!loading && memberships.length == 0"><i><br>No memberships found. Please refine your search riteria.<br><br></i></div>
+
+<table class="report-layout crm-report_contact_civireport" ng-show="!loading">
+	<thead>
+		<th>Name</th>
+		<th>ID</th>
+		<th>Status</th>
+		<th>Join Date</th>
+		<th>Start</th>
+		<th>End</th>
+		<th>Source</th>
+	</thead>
+
+	<tr ng-repeat="membership in memberships track by $index">
+		<td>{{ membership.membership_name }}</td>
+		<td>{{ membership.id }}</td>
+		<td>{{ membership.status_id }}</td>
+		<td>{{ membership.join_date }}</td>
+		<td>{{ membership.start_date }}</td>
+		<td>{{ membership.end_date }}</td>
+		<td>{{ membership.source }}</td>
+	</tr>
+
+</table>
+
+</div>
+

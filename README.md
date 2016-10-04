@@ -1,7 +1,7 @@
 This extension is an example of implementing a screen with CiviCRM+Angular. To view it:
 
  1. Install the extension
- 2. Navigate to "http://mysite.com/civicrm/a/#/example"
+ 2. Navigate to "http://mysite.com/civicrm/a/#/civicrm-angularJs"
 
 There are a few key files involved:
 
